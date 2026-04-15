@@ -1,5 +1,7 @@
 MAX_WIDTH = 100
 
+# Dictionnaire contenant toutes les phrases
+# Certaines sont dans le dictionnaire mais ne s'affichent pas (cf. blocs_affichage)
 phrases = {
     'bloc1_phrase1': 'le code propre facilite la maintenance',
     'bloc2_phrase1': 'tester souvent évite beaucoup d\'erreurs',
@@ -10,6 +12,8 @@ phrases = {
     'bloc3_phrase4': 'refactoriser améliore la compréhension',
 }
 
+# Structure d'affichage : définit l'ordre et les phrases affichées
+# Modifiez cette liste pour changer l'ordre ou exclure des phrases
 blocs_affichage = [
     ['bloc1_phrase1'],
     ['bloc2_phrase1'],
