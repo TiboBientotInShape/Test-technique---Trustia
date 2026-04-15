@@ -1,0 +1,45 @@
+# Ignore les fichiers de l'environnement virtuel
+venv/
+env/
+ENV/
+
+# Ignore la base de données SQLite
+*.sqlite3
+*.db
+
+# Ignore les fichiers compilés Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Ignore les fichiers
+.DS_Store
+*.pyc
+*.log
+
+# Ignore les répertoires de cache
+.cache/
+.pytest_cache/
+.coverage/
+
+# Ignore l'IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore les fichiers statiques collectés
+staticfiles/
+
+# Ignore les fichiers media
+media/
+
+# Ignore le fichier environnement
+.env
+.env.local
+
+# Ignore les fichiers générés par le système
+*.egg-info/
+dist/
+build/

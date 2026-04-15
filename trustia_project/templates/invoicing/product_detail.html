@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}Détail du Produit - TRUSTIA{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="mb-0">{{ product.name }}</h2>
+            </div>
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <h5 class="text-muted">Prix</h5>
+                        <p class="h4">{{ product.price|floatformat:2 }} €</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="text-muted">Date de Péremption</h5>
+                        <p class="h4">
+                            <span class="badge bg-{% if product.expiration_date > now %}success{% else %}danger{% endif %}">
+                                {{ product.expiration_date }}
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                
+                <hr>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 class="text-muted">Créé le</h5>
+                        <p>{{ product.created_at|date:"d/m/Y à H:i" }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="text-muted">Modifié le</h5>
+                        <p>{{ product.updated_at|date:"d/m/Y à H:i" }}</p>
+                    </div>
+                </div>
+                
+                <hr>
+                
+                <div class="d-flex gap-2">
+                    <a href="{% url 'product_edit' product.pk %}" class="btn btn-warning">
+                        ✏️ Modifier
+                    </a>
+                    <a href="{% url 'product_delete' product.pk %}" class="btn btn-danger">
+                        🗑️ Supprimer
+                    </a>
+                    <a href="{% url 'product_list' %}" class="btn btn-secondary">
+                        ⬅️ Retour
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
